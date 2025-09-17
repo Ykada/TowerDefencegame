@@ -22,9 +22,9 @@ Je kan zelf dingen doen en beter worden door een hoger level te worden dan je vr
 
 
 ## 4. Torens
-Toren 1 Accelerator, 15 studs, 125 DPS 3500.
+Toren 1 Accelerator, 15 studs, 125 DPS 3500. - stroomstraal als wapen -
 
-Toren 2 Scout, 10 Studs, 10 DPS, Sheap, 250.
+Toren 2 Scout, 10 Studs, 10 DPS, Sheap, 250. - glock als wapen -
 
 Eventuele extra torens:
 
@@ -60,13 +60,13 @@ meer hp en meer enemy’s
 ## 9. Planning per sprint en mechanics
 Schrijf per sprint welke mechanics jij oplevert in de build. Denk aan voorbeelden zoals vijandbeweging over een pad, torens plaatsen, doel kiezen en schieten, waves starten, UI voor geld en levens, upgrades, jouw unieke feature.
 
-Sprint 1 mechanics: game maken
+Sprint 1 mechanics: movement, alle fietures uitschijven
 
-Sprint 2 mechanics: game maken
+Sprint 2 mechanics: ennemy
 
-Sprint 3 mechanics: game maken
+Sprint 3 mechanics: towersystem
 
-Sprint 4 mechanics: game maken
+Sprint 4 mechanics: gameplay fix
 
 Sprint 5 mechanics: bug ffixe
 
