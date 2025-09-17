@@ -4,31 +4,22 @@ using UnityEngine.AI;
 public class Enemymovement : MonoBehaviour
 {
     public GameObject Player;
-    float speed = 3f;
-    [SerializeField] private Animator animator;
+    public float speed = 3f;
     public NavMeshAgent agent;
+    
 
 
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
         Player = GameObject.FindGameObjectWithTag("Player");
-        animator.SetBool("IsWalking", true);
+        agent = GetComponent<NavMeshAgent>();
+        GetComponent<NavMeshAgent>().speed = speed;
     }
     private void Update()
     {
         if (agent != null)
             agent.SetDestination(Player.transform.position);
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.gameObject == Player)
-        {
-            animator.SetBool("attac", true);
-            Debug.Log($"doe het pls");
-        }
-    }
-
 }
 
