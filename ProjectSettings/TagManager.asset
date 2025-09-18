@@ -7,6 +7,7 @@ TagManager:
   - ennemy
   - Tower
   - Spawnpoint
+  - TowerManager
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Navmesh
   - Water
   - UI
-  - 
+  - PlacementTpwerrange
   - 
   - 
   - 

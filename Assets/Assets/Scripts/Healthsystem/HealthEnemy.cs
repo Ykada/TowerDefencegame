@@ -5,12 +5,12 @@ public class HealthEnemy : MonoBehaviour
     [SerializeField] private int maxHealth;
     private int currentHealth;
     HealthHouse healthHouse;
-    Spawnpoint spawnpoint;
-    
+    public GameObject spawnpoint1;
 
     void Start()
     {
         currentHealth = maxHealth;
+        spawnpoint1 = GameObject.FindWithTag("Spawnpoint");
     }
 
     public void TakeDamage(int damage)
@@ -24,9 +24,8 @@ public class HealthEnemy : MonoBehaviour
 
     void Diebeforehome()
     {
-        spawnpoint = GameObject.FindGameObjectWithTag("Spawnpoint").GetComponent<Spawnpoint>();
-        spawnpoint.ennemydeath();
-        Die();
+        spawnpoint1.gameObject.GetComponent<Spawnpoint>().ennemydeath();
+        Destroy(gameObject);
     }
 
     void Die()
