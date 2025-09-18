@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 2
-  range: 2555
+  range: 20
   bulletPrefab: {fileID: 4844041623068435432, guid: 26a2bdb1dd5a7924db4fbc8ca716bbf4, type: 3}
   fireRate: 10
 --- !u!1 &8137675466832575941

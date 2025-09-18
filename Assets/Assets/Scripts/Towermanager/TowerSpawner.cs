@@ -4,12 +4,12 @@ using UnityEngine.UI;
 public class TowerSpawner : MonoBehaviour
 {
     [Header("Tower Prefabs")]
-    [SerializeField] private GameObject Scout;
+    [SerializeField] private GameObject Archer;
+    [SerializeField] private GameObject Crossbow;
+    [SerializeField] private GameObject Mage;
+    [SerializeField] private GameObject Cannon;
+    [SerializeField] private GameObject Minnigunner;
     [SerializeField] private GameObject Gunner;
-    [SerializeField] private GameObject Minigunner;
-    //[SerializeField] private GameObject --;
-    //[SerializeField] private GameObject ----;
-    //[SerializeField] private GameObject ---;
 
     [Header("Settings")]
     [SerializeField] private LayerMask placementLayer;
@@ -43,15 +43,27 @@ public class TowerSpawner : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            TrySelectTower(Scout, 250);
+            TrySelectTower(Archer, 250);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            TrySelectTower(Gunner, 500);
+            TrySelectTower(Crossbow, 500);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            TrySelectTower(Minigunner, 3500);
+            TrySelectTower(Mage, 750);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            TrySelectTower(Cannon, 1500);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            TrySelectTower(Minnigunner, 3500);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            TrySelectTower(Gunner, 500);
         }
     }
     #endregion
@@ -109,6 +121,6 @@ public class TowerSpawner : MonoBehaviour
 
     private void UpdateMoneyUI()
     {
-        moneyText.text = "Money: " + money.ToString();
+        moneyText.text = "$  " + money.ToString();
     }
 }
