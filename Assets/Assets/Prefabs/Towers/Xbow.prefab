@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1843a38050d464640a06a2ae57e6f083, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.545
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1843a38050d464640a06a2ae57e6f083, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1843a38050d464640a06a2ae57e6f083, type: 3}
       propertyPath: m_LocalPosition.z
@@ -94,6 +94,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 35
-  range: 45
+  range: 15
   bulletPrefab: {fileID: 4844041623068435432, guid: 26a2bdb1dd5a7924db4fbc8ca716bbf4, type: 3}
-  fireRate: 0.6
+  fireRate: 0.4

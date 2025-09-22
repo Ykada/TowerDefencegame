@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+﻿using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,26 +36,26 @@ public class Spawnpoint : MonoBehaviour
     private void Start()
     {
         startWave();
-        
     }
+
     private void Update()
     {
         waveNumberText.text = "Wave: " + currentWave + "/" + maxWaves;
-        waveCountdownText.text = "current enemies" + enemiesPerWave;
-
+        waveCountdownText.text = "Current Enemies: " + enemiesAlive;
     }
+
     void startWave()
     {
         isSpawning = true;
         currentWave++;
-        enemiesPerWave ++;
+        enemiesPerWave++;
         waveTimer = timeBetweenWaves;
         SpawnEnemies();
     }
 
     void startnextwave()
     {
-        if (enemiesAlive < 1)
+        if (enemiesAlive < 1 && currentWave < maxWaves)
         {
             enemiesPerWave++;
             currentWave++;
@@ -65,23 +65,65 @@ public class Spawnpoint : MonoBehaviour
 
     public void ennemydeath()
     {
-
         enemiesAlive--;
-        towerSpawner.GetComponent<TowerSpawner>().ennemydeath1(15);
+        towerSpawner.GetComponent<TowerSpawner>().ennemydeath1(65);
         startnextwave();
-
     }
+    public void ennemydeathbyhouse()
+    {
+        enemiesAlive--;
+        startnextwave();
+    }
+
     void SpawnEnemies()
     {
         for (int i = 0; i < enemiesPerWave; i++)
         {
             Transform spawnPoint = spawnLocations[Random.Range(0, spawnLocations.Length)];
-            GameObject enemyPrefab = ennemysToSpawn[Random.Range(0, ennemysToSpawn.Length)];
+            GameObject enemyPrefab = GetEnemyForWave(currentWave, i);
             waveCountdownText.text = "Spawning Enemy " + (i + 1) + " of " + enemiesPerWave;
             Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
             enemiesAlive++;
-            towerSpawner.GetComponent<TowerSpawner>().ennemydeath1(100);
         }
         isSpawning = false;
+    }
+
+    #region wave Logic
+    GameObject GetEnemyForWave(int wave, int index)
+    {
+        // 0–3 = normal enemies
+        // 4 = boss
+        // 5 = faster boss
+        // 6 = final boss
+
+        if (wave >= 1 && wave <= 4)
+        {
+            return ennemysToSpawn[Random.Range(0, 4)];
+        }
+        else if (wave >= 5 && wave <= 6)
+        {
+            if (index == 0) return ennemysToSpawn[8];
+            return ennemysToSpawn[Random.Range(0, 4)];
+        }
+        else if (wave >= 7 && wave <= 9)
+        {
+            if (Random.value < 0.25f) return ennemysToSpawn[16];
+            return ennemysToSpawn[Random.Range(0, 4)];
+        }
+        else if (wave >= 10 && wave <= 18)
+        {
+            return ennemysToSpawn[Random.Range(4, 6)];
+        }
+        else if (wave >= 19 && wave <= 24)
+        {
+            return ennemysToSpawn[Random.Range(0, ennemysToSpawn.Length - 1)];
+        }
+        else if (wave == 25)
+        {
+            return ennemysToSpawn[35];
+        }
+
+        return ennemysToSpawn[0];
+        #endregion
     }
 }

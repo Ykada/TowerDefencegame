@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 89eee0a495c4ab0418d227aced792c98, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.839
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 89eee0a495c4ab0418d227aced792c98, type: 3}
       propertyPath: m_LocalPosition.y
@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 89eee0a495c4ab0418d227aced792c98, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -94,6 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 100
-  range: 5
+  range: 100
   bulletPrefab: {fileID: 4844041623068435432, guid: 26a2bdb1dd5a7924db4fbc8ca716bbf4, type: 3}
-  fireRate: 0.05
+  fireRate: 0.025
