@@ -25,9 +25,8 @@ public class HouseHealth : MonoBehaviour
         {
             Debug.Log("Game Over");
             SceneManager.LoadScene("StartingScene");
-
         }
-        spawnpoint1.gameObject.GetComponent<Spawnpoint>().ennemydeathbyhouse();
+        spawnpoint1.gameObject.GetComponent<Spawnpoint>().EnemyDeathByHouse();
     }
 
 }

@@ -1,30 +1,38 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class TowerSpawner : MonoBehaviour
 {
     [Header("Tower Prefabs")]
-    [SerializeField] private GameObject Archer;
-    [SerializeField] private GameObject Crossbow;
-    [SerializeField] private GameObject Mage;
-    [SerializeField] private GameObject Cannon;
-    [SerializeField] private GameObject Crystal;
-    [SerializeField] private GameObject Minigunner;
+    [SerializeField] private GameObject archer;
+    [SerializeField] private GameObject crossbow;
+    [SerializeField] private GameObject mage;
+    [SerializeField] private GameObject cannon;
+    [SerializeField] private GameObject crystal;
+    [SerializeField] private GameObject minigunner;
 
     [Header("Settings")]
     [SerializeField] private LayerMask placementLayer;
     [SerializeField] private int maxTowers = 25;
+    [SerializeField] private int startingMoney = 500;
 
     [Header("UI")]
     [SerializeField] private Text moneyText;
+    [SerializeField] private Text towerErrorLog;
+    [SerializeField] private GameObject errorLogsPanel;
+    [SerializeField] private Text currenttowersspawnedtext;
 
-    [SerializeField] private int money = 500;
-    private GameObject currentTower;
-    private int currentCost;
+    private int money;
+    private GameObject previewTower;
+    private int previewCost;
+
+    private readonly List<PlacedTower> placedTowers = new List<PlacedTower>();
 
     private void Start()
     {
+        money = startingMoney;
         UpdateMoneyUI();
     }
 
@@ -32,59 +40,60 @@ public class TowerSpawner : MonoBehaviour
     {
         HandleTowerSelection();
         HandleTowerPlacement();
+        HandleTowerInteraction();
     }
 
-
-    public void ennemydeath1(int money2)
-    {
-        money += money2;
-        UpdateMoneyUI();
-    }
-
-    #region towerlist
+    #region Tower Selection
     private void HandleTowerSelection()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) TrySelectTower(Archer, 250);
-        else if (Input.GetKeyDown(KeyCode.Alpha2)) TrySelectTower(Crossbow, 500);
-        else if (Input.GetKeyDown(KeyCode.Alpha3)) TrySelectTower(Mage, 750);
-        else if (Input.GetKeyDown(KeyCode.Alpha4)) TrySelectTower(Cannon, 1500);
-        else if (Input.GetKeyDown(KeyCode.Alpha5)) TrySelectTower(Crystal, 5000);
-        else if (Input.GetKeyDown(KeyCode.Alpha6)) TrySelectTower(Minigunner, 2000);
+        if (Input.GetKeyDown(KeyCode.Alpha1)) TrySelectTower(archer, 250);
+        else if (Input.GetKeyDown(KeyCode.Alpha2)) TrySelectTower(crossbow, 500);
+        else if (Input.GetKeyDown(KeyCode.Alpha3)) TrySelectTower(mage, 750);
+        else if (Input.GetKeyDown(KeyCode.Alpha4)) TrySelectTower(cannon, 1500);
+        else if (Input.GetKeyDown(KeyCode.Alpha5)) TrySelectTower(crystal, 5000);
+        else if (Input.GetKeyDown(KeyCode.Alpha6)) TrySelectTower(minigunner, 2000);
     }
-    #endregion
 
     private void TrySelectTower(GameObject prefab, int cost)
     {
-        if (money >= cost)
+        if (placedTowers.Count >= maxTowers)
         {
-            if (currentTower != null) Destroy(currentTower);
-            currentTower = Instantiate(prefab);
-            currentCost = cost;
+            ShowError("Tower limit reached!");
+            return;
         }
-        else
-        {
-            Debug.Log("Not enough money to select tower!");
-        }
-    }
 
+        if (money < cost)
+        {
+            ShowError("Insufficient funds!");
+            return;
+        }
+
+        if (previewTower != null) Destroy(previewTower);
+        previewTower = Instantiate(prefab);
+        previewCost = cost;
+    }
+    #endregion
+
+    #region Tower Placement
     private void HandleTowerPlacement()
     {
-        if (currentTower == null) return;
+        if (previewTower == null) return;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 100f, placementLayer))
+        if (Physics.Raycast(ray, out RaycastHit hit, 100f, placementLayer))
         {
+            // Snap preview directly to ground
             Vector3 newPos = hit.point;
+            previewTower.transform.position = newPos;
 
-            float towerHeight = currentTower.GetComponent<Collider>() != null
-                ? currentTower.GetComponent<Collider>().bounds.extents.y
-                : 0f;
+            // Optional: ensure tower sits flat on surface
+            previewTower.transform.rotation = Quaternion.Euler(0f, previewTower.transform.rotation.eulerAngles.y, 0f);
 
-            newPos.y += towerHeight;
-
-            currentTower.transform.position = newPos;
+            // Rotate preview tower with R
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                previewTower.transform.Rotate(0, 45f, 0);
+            }
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -95,22 +104,108 @@ public class TowerSpawner : MonoBehaviour
 
     private void PlaceTower()
     {
-        if (money >= currentCost)
+        if (money < previewCost)
         {
-            money -= currentCost;
-            UpdateMoneyUI();
-            currentTower = null;
+            ShowError("Not enough money!");
+            Destroy(previewTower);
+            previewTower = null;
+            return;
         }
-        else
+
+        money -= previewCost;
+        UpdateMoneyUI();
+
+        PlacedTower newTower = new PlacedTower(previewTower, previewCost);
+        placedTowers.Add(newTower);
+
+        previewTower = null;
+    }
+    #endregion
+
+    #region Tower Interaction (Rotate / Remove)
+    private void HandleTowerInteraction()
+    {
+        if (previewTower != null) return;
+
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            Debug.Log("Not enough money to place tower!");
-            Destroy(currentTower);
-            currentTower = null;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                PlacedTower tower = placedTowers.Find(t => t.TowerObject == hit.collider.gameObject);
+                if (tower != null)
+                {
+                    tower.TowerObject.transform.Rotate(0, 45f, 0);
+                }
+            }
         }
+
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            Debug.Log("Backspace pressed - attempting to remove tower");
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                Debug.Log("Raycast hit: " + hit.collider.gameObject.name);
+                PlacedTower tower = placedTowers.Find(t => t.TowerObject == hit.collider.gameObject);
+                if (tower != null)
+                {
+                    RemoveTower(tower);
+                }
+            }
+        }
+    }
+
+    private void RemoveTower(PlacedTower tower)
+    {
+        int refund = tower.Cost / 2;
+        money += refund;
+        UpdateMoneyUI();
+
+        placedTowers.Remove(tower);
+        Destroy(tower.TowerObject);
+    }
+    #endregion
+
+    #region Money & UI
+    public void AddMoney(int amount)
+    {
+        money += amount;
+        UpdateMoneyUI();
     }
 
     private void UpdateMoneyUI()
     {
-        moneyText.text = "$ " + money.ToString();
+        moneyText.text = $"$ {money}";
+        currenttowersspawnedtext.text = $"Towers: {placedTowers.Count}/{maxTowers}";
+
     }
+
+    private void ShowError(string message)
+    {
+        errorLogsPanel.SetActive(true);
+        towerErrorLog.text = message;
+        StartCoroutine(HideErrorAfterDelay(2.5f));
+    }
+
+    private IEnumerator HideErrorAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        errorLogsPanel.SetActive(false);
+    }
+    #endregion
+
+    #region Helper Class
+    private class PlacedTower
+    {
+        public GameObject TowerObject { get; }
+        public int Cost { get; }
+
+        public PlacedTower(GameObject obj, int cost)
+        {
+            TowerObject = obj;
+            Cost = cost;
+        }
+    }
+    #endregion
 }

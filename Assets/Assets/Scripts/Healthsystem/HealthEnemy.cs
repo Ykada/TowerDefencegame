@@ -33,7 +33,7 @@ public class HealthEnemy : MonoBehaviour
 
     void Diebeforehome()
     {
-        spawnpoint1.gameObject.GetComponent<Spawnpoint>().ennemydeath();
+        spawnpoint1.gameObject.GetComponent<Spawnpoint>().EnemyDiedToTower(65);
         Destroy(gameObject);
     }
     private void OnTriggerEnter(Collider other)
