@@ -5,7 +5,15 @@ using System.Collections.Generic;
 
 public class TowerSpawner : MonoBehaviour
 {
-    [Header("Tower Prefabs")]
+    [Header("Preview Prefabs (Ghost Towers)")]
+    [SerializeField] private GameObject archerPreview;
+    [SerializeField] private GameObject crossbowPreview;
+    [SerializeField] private GameObject magePreview;
+    [SerializeField] private GameObject cannonPreview;
+    [SerializeField] private GameObject crystalPreview;
+    [SerializeField] private GameObject minigunnerPreview;
+
+    [Header("Tower Prefabs (Real Towers)")]
     [SerializeField] private GameObject archer;
     [SerializeField] private GameObject crossbow;
     [SerializeField] private GameObject mage;
@@ -26,6 +34,7 @@ public class TowerSpawner : MonoBehaviour
 
     private int money;
     private GameObject previewTower;
+    private GameObject selectedTowerPrefab; // real tower to spawn
     private int previewCost;
 
     private readonly List<PlacedTower> placedTowers = new List<PlacedTower>();
@@ -46,15 +55,15 @@ public class TowerSpawner : MonoBehaviour
     #region Tower Selection
     private void HandleTowerSelection()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) TrySelectTower(archer, 250);
-        else if (Input.GetKeyDown(KeyCode.Alpha2)) TrySelectTower(crossbow, 500);
-        else if (Input.GetKeyDown(KeyCode.Alpha3)) TrySelectTower(mage, 750);
-        else if (Input.GetKeyDown(KeyCode.Alpha4)) TrySelectTower(cannon, 1500);
-        else if (Input.GetKeyDown(KeyCode.Alpha5)) TrySelectTower(crystal, 5000);
-        else if (Input.GetKeyDown(KeyCode.Alpha6)) TrySelectTower(minigunner, 2000);
+        if (Input.GetKeyDown(KeyCode.Alpha1)) TrySelectTower(archer, archerPreview, 250);
+        else if (Input.GetKeyDown(KeyCode.Alpha2)) TrySelectTower(crossbow, crossbowPreview, 500);
+        else if (Input.GetKeyDown(KeyCode.Alpha3)) TrySelectTower(mage, magePreview, 750);
+        else if (Input.GetKeyDown(KeyCode.Alpha4)) TrySelectTower(cannon, cannonPreview, 1500);
+        else if (Input.GetKeyDown(KeyCode.Alpha5)) TrySelectTower(crystal, crystalPreview, 5000);
+        else if (Input.GetKeyDown(KeyCode.Alpha6)) TrySelectTower(minigunner, minigunnerPreview, 2000);
     }
 
-    private void TrySelectTower(GameObject prefab, int cost)
+    private void TrySelectTower(GameObject prefab, GameObject previewPrefab, int cost)
     {
         if (placedTowers.Count >= maxTowers)
         {
@@ -69,8 +78,10 @@ public class TowerSpawner : MonoBehaviour
         }
 
         if (previewTower != null) Destroy(previewTower);
-        previewTower = Instantiate(prefab);
+
+        previewTower = Instantiate(previewPrefab); // show ghost tower
         previewCost = cost;
+        selectedTowerPrefab = prefab; // save real tower
     }
     #endregion
 
@@ -82,14 +93,11 @@ public class TowerSpawner : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, placementLayer))
         {
-            // Snap preview directly to ground
             Vector3 newPos = hit.point;
             previewTower.transform.position = newPos;
 
-            // Optional: ensure tower sits flat on surface
             previewTower.transform.rotation = Quaternion.Euler(0f, previewTower.transform.rotation.eulerAngles.y, 0f);
 
-            // Rotate preview tower with R
             if (Input.GetKeyDown(KeyCode.R))
             {
                 previewTower.transform.Rotate(0, 45f, 0);
@@ -115,10 +123,20 @@ public class TowerSpawner : MonoBehaviour
         money -= previewCost;
         UpdateMoneyUI();
 
-        PlacedTower newTower = new PlacedTower(previewTower, previewCost);
+        // Save preview position/rotation
+        Vector3 pos = previewTower.transform.position;
+        Quaternion rot = previewTower.transform.rotation;
+
+        Destroy(previewTower); // remove preview
+
+        // Spawn real tower
+        GameObject realTower = Instantiate(selectedTowerPrefab, pos, rot);
+
+        PlacedTower newTower = new PlacedTower(realTower, previewCost);
         placedTowers.Add(newTower);
 
         previewTower = null;
+        selectedTowerPrefab = null;
     }
     #endregion
 
@@ -142,11 +160,9 @@ public class TowerSpawner : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            Debug.Log("Backspace pressed - attempting to remove tower");
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                Debug.Log("Raycast hit: " + hit.collider.gameObject.name);
                 PlacedTower tower = placedTowers.Find(t => t.TowerObject == hit.collider.gameObject);
                 if (tower != null)
                 {
@@ -178,7 +194,6 @@ public class TowerSpawner : MonoBehaviour
     {
         moneyText.text = $"$ {money}";
         currenttowersspawnedtext.text = $"Towers: {placedTowers.Count}/{maxTowers}";
-
     }
 
     private void ShowError(string message)
