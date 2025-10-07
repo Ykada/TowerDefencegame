@@ -25,6 +25,7 @@ public class TowerSpawner : MonoBehaviour
     [SerializeField] private LayerMask placementLayer;
     [SerializeField] private int maxTowers = 25;
     [SerializeField] private int startingMoney = 500;
+    [SerializeField] private int money;
 
     [Header("UI")]
     [SerializeField] private Text moneyText;
@@ -32,7 +33,6 @@ public class TowerSpawner : MonoBehaviour
     [SerializeField] private GameObject errorLogsPanel;
     [SerializeField] private Text currenttowersspawnedtext;
 
-    private int money;
     private GameObject previewTower;
     private GameObject selectedTowerPrefab; // real tower to spawn
     private int previewCost;
@@ -60,7 +60,7 @@ public class TowerSpawner : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha3)) TrySelectTower(mage, magePreview, 750);
         else if (Input.GetKeyDown(KeyCode.Alpha4)) TrySelectTower(cannon, cannonPreview, 1500);
         else if (Input.GetKeyDown(KeyCode.Alpha5)) TrySelectTower(crystal, crystalPreview, 5000);
-        else if (Input.GetKeyDown(KeyCode.Alpha6)) TrySelectTower(minigunner, minigunnerPreview, 2000);
+        else if (Input.GetKeyDown(KeyCode.Alpha6)) TrySelectTower(minigunner, minigunnerPreview, 15000);
     }
 
     private void TrySelectTower(GameObject prefab, GameObject previewPrefab, int cost)

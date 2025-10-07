@@ -103,7 +103,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 125
+  healthHouse: {fileID: 0}
   spawnpoint1: {fileID: 0}
+  healthText: {fileID: 0}
 --- !u!195 &7931182210670204742
 NavMeshAgent:
   m_ObjectHideFlags: 0
