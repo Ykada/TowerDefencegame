@@ -63,6 +63,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -84,6 +86,7 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -121,12 +124,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea7c28ec4d841743921f57ab746ca60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ennemysToSpawn:
-  - {fileID: 4339413554588014917, guid: c0b12b606d58fd34b88f9895df7e256c, type: 3}
-  spawnLocations:
-  - {fileID: 4145567081236091920}
-  waveNumber: 1
-  timeBetweenWaves: 25
+  normalEnemy: {fileID: 68832504316338333, guid: b054b77293245524a99aa4a0324bd878, type: 3}
+  fastBoyWithLowHealth: {fileID: 68832504316338333, guid: b054b77293245524a99aa4a0324bd878, type: 3}
+  normalBoss: {fileID: 6780969146777234244, guid: af242d74e2395b347a7974d14065595d, type: 3}
+  fastBoy: {fileID: 5561352098311163252, guid: 8d4b9ec6c7ba91149af4e3d499a9dda1, type: 3}
+  finalBoss: {fileID: 1478077611911413720, guid: 16eb48bc85aff7c44a6acbabf8b22ec7, type: 3}
+  houseHealth: {fileID: 0}
   towerSpawner: {fileID: 0}
-  waveCountdownText: {fileID: 0}
-  waveNumberText: {fileID: 0}
+  spawnInterval: 1
+  totalWaves: 25
+  waveText: {fileID: 0}
+  spawnPoint: {fileID: 4145567081236091920}
