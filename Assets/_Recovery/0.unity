@@ -27284,8 +27284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46741b6161f26c748b220331818c4492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Uihandler
-  loadingScreen: {fileID: 2139208727}
-  loadingInfoText: {fileID: 2131309380}
+  loadingscreen: {fileID: 2139208727}
+  loadinginfotext: {fileID: 2131309380}
 --- !u!1818360610 &2139208730
 ScaleConstraint:
   m_ObjectHideFlags: 0

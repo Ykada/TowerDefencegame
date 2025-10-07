@@ -27286,6 +27286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Uihandler
   loadingScreen: {fileID: 2139208727}
   loadingInfoText: {fileID: 2131309380}
+  sceneToLoad: MAP2
 --- !u!1818360610 &2139208730
 ScaleConstraint:
   m_ObjectHideFlags: 0
