@@ -24,6 +24,7 @@ public class HouseHealth : MonoBehaviour
         if (currenthealth <= 0)
         {
             Debug.Log("Game Over");
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene("StartingScene");
         }
         spawnpoint1.gameObject.GetComponent<Spawnpoint>().EnemyDeathByHouse();

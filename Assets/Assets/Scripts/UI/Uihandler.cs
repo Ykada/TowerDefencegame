@@ -23,7 +23,8 @@ public class Uihandler : MonoBehaviour
         }
         else
         {
-            Invoke(nameof(StartShaderRendering), 0.5f);
+            Invoke(nameof(LoadNextScene), 1f);
+            //Invoke(nameof(StartShaderRendering), 0.5f);
         }
     }
 
