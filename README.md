@@ -30,5 +30,5 @@
   ###
   ###
 
-  <h2 align="center">© 2025 YKΛDΛ_. All rights reserved.
-This project, Tower Defence Simulator, and all associated assets, code, and materials are the intellectual property of YKΛDΛ_.</h2>
+  <h9 align="center">© 2025 YKΛDΛ_. All rights reserved.
+All scripts included in this repository are the intellectual property of YKΛDΛ_ and may not be copied, modified, distributed, or used for commercial purposes without explicit permission.</h9>
