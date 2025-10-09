@@ -1,0 +1,20 @@
+newmtl metal_mat
+Ka 0.050 0.050 0.050
+Kd 0.200 0.220 0.220
+Ks 0.500 0.500 0.500
+Ns 25.000
+map_Kd metal_albedo.png
+
+newmtl screen_mat
+Ka 0.000 0.000 0.000
+Kd 0.000 0.000 0.000
+Ks 0.000 0.000 0.000
+Ns 10.000
+map_Kd screen_emissive.png
+illum 2
+
+newmtl screen_button
+Ka 0.000 0.000 0.000
+Kd 0.000 0.000 0.000
+Ks 0.300 0.300 0.300
+map_Kd metal_albedo.png
