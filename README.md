@@ -24,3 +24,11 @@
 <p align="center">All scripts are written by myself</p>
   
   <p align="center">Map and other Visual aspects of the Simulator are from the unity asset store or generated with AI</p>
+  <p align="center">https://github.com/Ykada/TowerDefencegame/blob/main/README.txt</p>
+
+  ###
+  ###
+  ###
+
+  <h2 align="center">© 2025 YKΛDΛ_. All rights reserved.
+This project, Tower Defence Simulator, and all associated assets, code, and materials are the intellectual property of YKΛDΛ_.</h2>
