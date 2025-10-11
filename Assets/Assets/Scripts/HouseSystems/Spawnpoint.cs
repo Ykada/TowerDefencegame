@@ -14,6 +14,7 @@ public class Spawnpoint : MonoBehaviour
     [Header("Dependencies")]
     [SerializeField] private HouseHealth houseHealth;
     [SerializeField] private TowerSpawner towerSpawner;
+    [SerializeField] private TimeHandler timeHandler;
 
     [Header("Wave Settings")]
     [SerializeField] private float spawnInterval = 1f;
@@ -36,6 +37,7 @@ public class Spawnpoint : MonoBehaviour
     private IEnumerator StartWave(int waveNumber)
     {
         Debug.Log("Starting wave " + waveNumber);
+        timeHandler.BroadcastMessage("Currentwave", waveNumber);
         waveText.text = $"Wave: {waveNumber}/{totalWaves}";
 
         WaveData wave = GetWaveData(waveNumber);
@@ -85,7 +87,7 @@ public class Spawnpoint : MonoBehaviour
             }
             else
             {
-                StartCoroutine(StartWave(currentWave + 1));
+                StartCoroutine(StartWave(currentWave ++));
                 towerSpawner.GetComponent<TowerSpawner>().AddMoney(250);
             }
         }

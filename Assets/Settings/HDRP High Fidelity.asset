@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RenderPipelineSettings:
     supportShadowMask: 1
-    supportSSR: 0
+    supportSSR: 1
     supportSSRTransparent: 0
     supportSSAO: 1
     supportSSGI: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
     supportCustomPass: 1
     supportVariableRateShading: 1
     customBufferFormat: 12
-    supportedLitShaderMode: 1
+    supportedLitShaderMode: 3
     planarReflectionResolution:
       m_Values: 000100000004000000080000
       m_SchemaId:
@@ -65,7 +65,7 @@ MonoBehaviour:
         m_Id: With3Levels
     supportDecals: 1
     supportDecalLayers: 1
-    supportSurfaceGradient: 0
+    supportSurfaceGradient: 1
     decalNormalBufferHP: 0
     supportHighQualityLineRendering: 1
     highQualityLineRenderingMemoryBudget: 256
@@ -79,19 +79,19 @@ MonoBehaviour:
     lightProbeSystem: 1
     oldLightProbeSystem: 1
     probeVolumeMemoryBudget: 1024
-    supportProbeVolumeGPUStreaming: 0
-    supportProbeVolumeDiskStreaming: 0
+    supportProbeVolumeGPUStreaming: 1
+    supportProbeVolumeDiskStreaming: 1
     probeVolumeSHBands: 1
-    supportProbeVolumeScenarios: 0
+    supportProbeVolumeScenarios: 1
     supportProbeVolumeScenarioBlending: 1
-    probeVolumeBlendingMemoryBudget: 128
+    probeVolumeBlendingMemoryBudget: 256
     supportRayTracing: 1
     supportVFXRayTracing: 1
     supportedRayTracingMode: 1
     lightLoopSettings:
-      cookieAtlasSize: 512
+      cookieAtlasSize: 1024
       cookieFormat: 74
-      cookieAtlasLastValidMip: 0
+      cookieAtlasLastValidMip: 1
       cookieTexArraySize: 16
       planarReflectionAtlasSize: 2048
       reflectionProbeCacheSize: 32
@@ -99,7 +99,7 @@ MonoBehaviour:
       maxEnvLightsOnScreen: 32
       reflectionCacheCompressed: 1
       reflectionProbeFormat: 74
-      reflectionProbeTexCacheSize: 4096
+      reflectionProbeTexCacheSize: 2048
       reflectionProbeTexLastValidCubeMip: 3
       reflectionProbeTexLastValidPlanarMip: 0
       reflectionProbeDecreaseResToFit: 1
@@ -167,7 +167,7 @@ MonoBehaviour:
       bufferFormat: 74
     dynamicResolutionSettings:
       enabled: 1
-      useMipBias: 0
+      useMipBias: 1
       advancedUpscalersByPriority: 
       DLSSPerfQualitySetting: 0
       DLSSInjectionPoint: 0
@@ -315,10 +315,10 @@ MonoBehaviour:
       - 0.5
       - 0.5
     gpuResidentDrawerSettings:
-      mode: 1
-      smallMeshScreenPercentage: 0
-      enableOcclusionCullingInCameras: 0
-      useDepthPrepassForOccluders: 0
+      mode: 0
+      smallMeshScreenPercentage: 1
+      enableOcclusionCullingInCameras: 1
+      useDepthPrepassForOccluders: 1
     m_ObsoleteLightLayerName0: Light LayerDefault
     m_ObsoleteLightLayerName1: InteriorOnly
     m_ObsoleteLightLayerName2: ExteriorOnly
@@ -548,5 +548,5 @@ MonoBehaviour:
   m_ObsoleteDiffusionProfileSettingsList:
   - {fileID: 0}
   - {fileID: 0}
-  m_PrefilterUseLegacyLightmaps: 1
+  m_PrefilterUseLegacyLightmaps: 0
   m_PrefilterUseLightmapBicubicSampling: 0

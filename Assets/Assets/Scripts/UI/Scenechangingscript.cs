@@ -13,10 +13,7 @@ public class Scenechangingscript : MonoBehaviour
     {
         startbutton.onClick.AddListener(OnStartButtonClicked);
     }
-    private void OnBeforeTransformParentChanged(string scenename)
-    {
-        string scenena = sceneToLoad;
-    }
+
     private void OnStartButtonClicked()
     {
         StartCoroutine(ChangeSceneAfterDelay());
