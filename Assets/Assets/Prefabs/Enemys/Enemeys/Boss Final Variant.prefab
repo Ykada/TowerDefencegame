@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5788909121727763396, guid: af242d74e2395b347a7974d14065595d, type: 3}
+      propertyPath: m_Name
+      value: HealthBar
+      objectReference: {fileID: 0}
     - target: {fileID: 6147702867202028030, guid: af242d74e2395b347a7974d14065595d, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.442
@@ -75,6 +79,22 @@ PrefabInstance:
     - target: {fileID: 7486131999342122151, guid: af242d74e2395b347a7974d14065595d, type: 3}
       propertyPath: speed
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505155859553497268, guid: af242d74e2395b347a7974d14065595d, type: 3}
+      propertyPath: m_Height
+      value: 3.1658607
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505155859553497268, guid: af242d74e2395b347a7974d14065595d, type: 3}
+      propertyPath: m_Radius
+      value: 0.73238313
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505155859553497268, guid: af242d74e2395b347a7974d14065595d, type: 3}
+      propertyPath: m_Center.x
+      value: 0.050197218
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505155859553497268, guid: af242d74e2395b347a7974d14065595d, type: 3}
+      propertyPath: m_Center.y
+      value: 1.0829306
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -9562,6 +9562,10 @@ PrefabInstance:
       propertyPath: antialiasing
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2123133641706515231, guid: b2dacfe5d2bb5eb49a23ab6d099cd180, type: 3}
+      propertyPath: probeLayerMask.m_Bits
+      value: 703
+      objectReference: {fileID: 0}
     - target: {fileID: 5240440695205043478, guid: b2dacfe5d2bb5eb49a23ab6d099cd180, type: 3}
       propertyPath: m_Name
       value: Player
@@ -9609,7 +9613,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5240440695205043478, guid: b2dacfe5d2bb5eb49a23ab6d099cd180, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 565578878}
   m_SourcePrefab: {fileID: 100100000, guid: b2dacfe5d2bb5eb49a23ab6d099cd180, type: 3}
 --- !u!1001 &267032721
 PrefabInstance:
@@ -20095,6 +20102,27 @@ Light:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 0
+--- !u!1 &565578872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5240440695205043478, guid: b2dacfe5d2bb5eb49a23ab6d099cd180, type: 3}
+  m_PrefabInstance: {fileID: 263251864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &565578878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565578872}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25cc2d50c7ae114ca9e1609e32b34c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Raycasthealthhider
+  playerCamera: {fileID: 711686411}
+  hideLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1001 &565711454
 PrefabInstance:
   m_ObjectHideFlags: 0

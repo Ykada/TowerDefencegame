@@ -8,6 +8,7 @@ public class HealthEnemy : MonoBehaviour
     public GameObject healthHouse;
     public GameObject spawnpoint1;
     [SerializeField] private TextMeshProUGUI healthText;
+    public bool isHealthUIVisible = false;
 
 
     void Start()
@@ -19,6 +20,15 @@ public class HealthEnemy : MonoBehaviour
     void Update()
     {
         healthText.text = currentHealth.ToString();
+
+        if (isHealthUIVisible == true)
+        {
+            healthText.gameObject.SetActive(true);
+        }
+        else
+        {
+            healthText.gameObject.SetActive(false);
+        }
     }
 
     public void TakeDamage(int damage)
