@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 371350487169644873, guid: b054b77293245524a99aa4a0324bd878, type: 3}
+      propertyPath: isHealthUIVisible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 846494626863315495, guid: b054b77293245524a99aa4a0324bd878, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.63448

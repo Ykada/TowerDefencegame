@@ -631,7 +631,7 @@ MonoBehaviour:
   healthHouse: {fileID: 0}
   spawnpoint1: {fileID: 0}
   healthText: {fileID: 5064460135488839867}
-  isHealthUIVisible: 0
+  isHealthUIVisible: 1
 --- !u!114 &4110176966432530302
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 12000
       objectReference: {fileID: 0}
+    - target: {fileID: 6613835135804961424, guid: af242d74e2395b347a7974d14065595d, type: 3}
+      propertyPath: isHealthUIVisible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6780969146777234244, guid: af242d74e2395b347a7974d14065595d, type: 3}
       propertyPath: m_Name
       value: Boss Final Variant
