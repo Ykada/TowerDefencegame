@@ -68,9 +68,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1452182880482412896, guid: b054b77293245524a99aa4a0324bd878, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.588
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289635218841483737, guid: b054b77293245524a99aa4a0324bd878, type: 3}
+      propertyPath: m_Acceleration
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947957246246026093, guid: b054b77293245524a99aa4a0324bd878, type: 3}
+      propertyPath: m_Height
+      value: 2.4002552
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947957246246026093, guid: b054b77293245524a99aa4a0324bd878, type: 3}
+      propertyPath: m_Center.y
+      value: 1.8271165
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947957246246026093, guid: b054b77293245524a99aa4a0324bd878, type: 3}
+      propertyPath: m_Center.z
+      value: 0.12504533
+      objectReference: {fileID: 0}
     - target: {fileID: 4110176966432530302, guid: b054b77293245524a99aa4a0324bd878, type: 3}
       propertyPath: speed
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183371232727833267, guid: b054b77293245524a99aa4a0324bd878, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5788068883434366961, guid: b054b77293245524a99aa4a0324bd878, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747505193807268646, guid: b054b77293245524a99aa4a0324bd878, type: 3}
+      propertyPath: m_RendererPriority
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747505193807268646, guid: b054b77293245524a99aa4a0324bd878, type: 3}
+      propertyPath: m_RayTracingAccelStructBuildFlagsOverride
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337088691378433503, guid: b054b77293245524a99aa4a0324bd878, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

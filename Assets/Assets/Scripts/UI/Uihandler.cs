@@ -19,48 +19,32 @@ public class Uihandler : MonoBehaviour
             if (loadingInfoText != null)
                 loadingInfoText.text = "Shaders already warmed — skipping...";
 
-            Invoke(nameof(LoadNextScene), 1f);
+            Invoke(nameof(LoadNextScene), 5f);
         }
         else
         {
-            Invoke(nameof(LoadNextScene), 1f);
-            //Invoke(nameof(StartShaderRendering), 0.5f);
+            loadingInfoText.text = "Preparing For haders...";
+            //Invoke(nameof(LoadNextScene), 5f);
+            Invoke(nameof(StartShaderRendering), 5f);
         }
     }
 
-    private void StartShaderRendering()
+    void StartShaderRendering()
     {
         if (loadingInfoText != null)
             loadingInfoText.text = "Warming up shaders...";
-
         Shader.WarmupAllShaders();
-
-        Camera cam = Camera.main;
-        if (cam != null)
-            cam.renderingPath = RenderingPath.DeferredShading;
-
-        if (Shader.Find("Hidden/Internal-ScreenSpaceShadows") != null)
-        {
-            Shader.globalMaximumLOD = 600;
-            if (loadingInfoText != null)
-                loadingInfoText.text = "Shaders warmed up (with shadows).";
-        }
-        else
-        {
-            Shader.globalMaximumLOD = 300;
-            if (loadingInfoText != null)
-                loadingInfoText.text = "Shaders warmed up (no shadows).";
-        }
-
         shadersAlreadyWarmed = true;
-
-        Invoke(nameof(LoadNextScene), 1f);
+        if (loadingInfoText != null)
+            loadingInfoText.text = "Awaiting Game...";
+        Invoke(nameof(LoadNextScene), 8f);
     }
 
     private void LoadNextScene()
     {
         if (loadingInfoText != null)
-            loadingInfoText.text = "Loading Scene...";
+            loadingInfoText.text = "Loading Game";
+
 
         if (loadingScreen != null)
             loadingScreen.SetActive(false);

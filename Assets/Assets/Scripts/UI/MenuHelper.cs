@@ -30,9 +30,15 @@ public class MenuHelper : MonoBehaviour
         if (menuUI != null)
             menuUI.SetActive(!menuUI.activeSelf);
         if (menuUI.activeSelf)
+        {
+            Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0f;
+        }
         else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1f;
+        }
     }
     private void ReturnToMainMenu()
     {
