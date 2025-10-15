@@ -89,7 +89,7 @@ MonoBehaviour:
     supportVFXRayTracing: 0
     supportedRayTracingMode: 3
     lightLoopSettings:
-      cookieAtlasSize: 512
+      cookieAtlasSize: 8192
       cookieFormat: 74
       cookieAtlasLastValidMip: 0
       cookieTexArraySize: 16
@@ -107,7 +107,7 @@ MonoBehaviour:
       skyLightingOverrideLayerMask:
         serializedVersion: 2
         m_Bits: 0
-      supportFabricConvolution: 0
+      supportFabricConvolution: 1
       maxDirectionalLightsOnScreen: 16
       maxPunctualLightsOnScreen: 512
       maxAreaLightsOnScreen: 64

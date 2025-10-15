@@ -23,7 +23,7 @@ public class Uihandler : MonoBehaviour
         }
         else
         {
-            loadingInfoText.text = "Preparing For haders...";
+            loadingInfoText.text = "Preparing For shaders...";
             //Invoke(nameof(LoadNextScene), 5f);
             Invoke(nameof(StartShaderRendering), 5f);
         }
@@ -33,8 +33,8 @@ public class Uihandler : MonoBehaviour
     {
         if (loadingInfoText != null)
             loadingInfoText.text = "Warming up shaders...";
-        Shader.WarmupAllShaders();
-        shadersAlreadyWarmed = true;
+        //Shader.WarmupAllShaders();
+        //shadersAlreadyWarmed = true;
         if (loadingInfoText != null)
             loadingInfoText.text = "Awaiting Game...";
         Invoke(nameof(LoadNextScene), 8f);
