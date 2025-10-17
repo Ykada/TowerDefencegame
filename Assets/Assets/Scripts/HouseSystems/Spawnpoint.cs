@@ -17,8 +17,9 @@ public class Spawnpoint : MonoBehaviour
     [SerializeField] private TimeHandler timeHandler;
 
     [Header("Wave Settings")]
-    [SerializeField] private float spawnInterval = 1f;
+    [SerializeField] private float spawnInterval = 0.5f;
     [SerializeField] private int totalWaves = 25;
+   // [SerializeField]
     private int currentWave = 0;
     private int enemiesRemainingInWave = 0;
 
@@ -29,11 +30,17 @@ public class Spawnpoint : MonoBehaviour
     [Header("Spawning Settings")]
     [SerializeField] private Transform spawnPoint;
 
-    private void Start()
+    private void Awake()
     {
-        StartCoroutine(StartWave(currentWave + 1));
+        currentWave++;
+        StartCoroutine(StartWave(currentWave ));
+       //currentWave = 0;
     }
 
+    private void Start()
+    {
+
+    }
     private IEnumerator StartWave(int waveNumber)
     {
         Debug.Log("Starting wave " + waveNumber);
@@ -78,16 +85,16 @@ public class Spawnpoint : MonoBehaviour
     {
         enemiesRemainingInWave--;
 
-        if (enemiesRemainingInWave <= 0)
+        if (enemiesRemainingInWave <= 0)//1
         {
-            currentWave++;
-            if (currentWave >= totalWaves)
+            currentWave++;//2
+            if (currentWave > totalWaves)
             {
                 Debug.Log("All waves completed! You win!");
             }
             else
             {
-                StartCoroutine(StartWave(currentWave ++));
+                StartCoroutine(StartWave(currentWave));
                 towerSpawner.GetComponent<TowerSpawner>().AddMoney(250);
             }
         }
@@ -123,6 +130,7 @@ public class Spawnpoint : MonoBehaviour
             case 22: wave.normalEnemies = 25; wave.fastBoysLowHealth = 21; wave.normalBosses = 18; wave.fastBoys = 15; break;
             case 23: wave.normalEnemies = 26; wave.fastBoysLowHealth = 22; wave.normalBosses = 19; wave.fastBoys = 16; break;
             case 24: wave.normalEnemies = 30; wave.fastBoysLowHealth = 25; wave.normalBosses = 25; wave.fastBoys = 20; break;
+          
             case 25: wave.finalBosses = 1; break;
         }
         return wave;
