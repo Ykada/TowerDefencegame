@@ -1964,7 +1964,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Crossbow, $ 500
+  m_Text: Obelisk, $ 500
 --- !u!222 &36148359
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4260,7 +4260,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cannon, $ 1500
+  m_Text: StarCannon, $ 1500
 --- !u!222 &115450071
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9572,7 +9572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8605925821673954918, guid: b2dacfe5d2bb5eb49a23ab6d099cd180, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.692882
+      value: -28.71
       objectReference: {fileID: 0}
     - target: {fileID: 8605925821673954918, guid: b2dacfe5d2bb5eb49a23ab6d099cd180, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9584,31 +9584,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8605925821673954918, guid: b2dacfe5d2bb5eb49a23ab6d099cd180, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.68235207
+      value: 0.6913138
       objectReference: {fileID: 0}
     - target: {fileID: 8605925821673954918, guid: b2dacfe5d2bb5eb49a23ab6d099cd180, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.08536092
+      value: -0.06283453
       objectReference: {fileID: 0}
     - target: {fileID: 8605925821673954918, guid: b2dacfe5d2bb5eb49a23ab6d099cd180, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.71386904
+      value: 0.71686506
       objectReference: {fileID: 0}
     - target: {fileID: 8605925821673954918, guid: b2dacfe5d2bb5eb49a23ab6d099cd180, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.13228893
+      value: 0.065127224
       objectReference: {fileID: 0}
     - target: {fileID: 8605925821673954918, guid: b2dacfe5d2bb5eb49a23ab6d099cd180, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -162.22
+      value: -169.616
       objectReference: {fileID: 0}
     - target: {fileID: 8605925821673954918, guid: b2dacfe5d2bb5eb49a23ab6d099cd180, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -87.966
+      value: -87.92099
       objectReference: {fileID: 0}
     - target: {fileID: 8605925821673954918, guid: b2dacfe5d2bb5eb49a23ab6d099cd180, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 183.532
+      value: 179.998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11150,7 +11150,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316756113}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90c13bc8e6819db41acfbf3df9ee036f, type: 3}
   m_Name: 
@@ -16252,7 +16252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5efb10cad17fcf5458d79a035d2f750b, type: 3}
+  m_Texture: {fileID: 2800000, guid: b68e725641fd3ea438219500b601bb00, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -17417,7 +17417,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Archer, $ 250
+  m_Text: Frezer, $ 250
 --- !u!222 &493426002
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24311,7 +24311,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: aea1a1089804f63419c85a02e8c67e18, type: 3}
+  m_Texture: {fileID: 2800000, guid: 967c4c204f3e79941869f2f84917dc7d, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -25540,7 +25540,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 100
 --- !u!222 &706874074
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26012,7 +26012,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: aea1a1089804f63419c85a02e8c67e18, type: 3}
+  m_Texture: {fileID: 2800000, guid: 967c4c204f3e79941869f2f84917dc7d, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -28306,7 +28306,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: aea1a1089804f63419c85a02e8c67e18, type: 3}
+  m_Texture: {fileID: 2800000, guid: 967c4c204f3e79941869f2f84917dc7d, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -36408,7 +36408,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Waves number
+  m_Text: Game starting soon...
 --- !u!222 &1005989421
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40534,7 +40534,7 @@ GameObject:
   - component: {fileID: 1086012972}
   - component: {fileID: 1086012971}
   m_Layer: 5
-  m_Name: AXEBB
+  m_Name: Obelisk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40580,7 +40580,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5efb10cad17fcf5458d79a035d2f750b, type: 3}
+  m_Texture: {fileID: 2800000, guid: b68e725641fd3ea438219500b601bb00, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -42028,7 +42028,7 @@ GameObject:
   - component: {fileID: 1120504088}
   - component: {fileID: 1120504087}
   m_Layer: 5
-  m_Name: AXEBW
+  m_Name: Obelisk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45794,7 +45794,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: aea1a1089804f63419c85a02e8c67e18, type: 3}
+  m_Texture: {fileID: 2800000, guid: d68fdcbab1a830d4aa0bcb3a0f092aa0, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -46622,7 +46622,7 @@ GameObject:
   - component: {fileID: 1269462027}
   - component: {fileID: 1269462026}
   m_Layer: 5
-  m_Name: Archericon
+  m_Name: Frezer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46674,7 +46674,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: def8c9abc358e5a44a7fccd1890c3403, type: 3}
+  m_Texture: {fileID: 2800000, guid: 2731c707bfe1e6545a193b53ac3bbaad, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -54356,7 +54356,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: aea1a1089804f63419c85a02e8c67e18, type: 3}
+  m_Texture: {fileID: 2800000, guid: d68fdcbab1a830d4aa0bcb3a0f092aa0, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -55098,7 +55098,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: aea1a1089804f63419c85a02e8c67e18, type: 3}
+  m_Texture: {fileID: 2800000, guid: 967c4c204f3e79941869f2f84917dc7d, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -60726,7 +60726,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cannon, $ 1500
+  m_Text: StarCannon, $ 1500
 --- !u!222 &1639586134
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -69242,7 +69242,7 @@ PrefabInstance:
       objectReference: {fileID: 2016840010}
     - target: {fileID: 384139659102580147, guid: b91a5dd206227d34baa482d0a0d39353, type: 3}
       propertyPath: spawnInterval
-      value: 0.001
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 384139659102580147, guid: b91a5dd206227d34baa482d0a0d39353, type: 3}
       propertyPath: fastBoyWithLowHealth
@@ -69254,7 +69254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102302389999232137, guid: b91a5dd206227d34baa482d0a0d39353, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4145567081236091920, guid: b91a5dd206227d34baa482d0a0d39353, type: 3}
       propertyPath: m_LocalPosition.x
@@ -71720,7 +71720,7 @@ GameObject:
   - component: {fileID: 1913591101}
   - component: {fileID: 1913591100}
   m_Layer: 5
-  m_Name: Archericon
+  m_Name: Frezer icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71772,7 +71772,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: def8c9abc358e5a44a7fccd1890c3403, type: 3}
+  m_Texture: {fileID: 2800000, guid: 2731c707bfe1e6545a193b53ac3bbaad, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

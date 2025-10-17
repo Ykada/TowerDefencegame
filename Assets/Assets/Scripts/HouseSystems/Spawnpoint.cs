@@ -19,13 +19,11 @@ public class Spawnpoint : MonoBehaviour
     [Header("Wave Settings")]
     [SerializeField] private float spawnInterval = 0.5f;
     [SerializeField] private int totalWaves = 25;
-   // [SerializeField]
     private int currentWave = 0;
     private int enemiesRemainingInWave = 0;
 
     [Header("UI Elements")]
     [SerializeField] private Text waveText;
-    //[SerializeField] private Text enemiesLeftText;
 
     [Header("Spawning Settings")]
     [SerializeField] private Transform spawnPoint;
@@ -33,8 +31,8 @@ public class Spawnpoint : MonoBehaviour
     private void Awake()
     {
         currentWave++;
-        StartCoroutine(StartWave(currentWave ));
-       //currentWave = 0;
+        StartCoroutine(StartWave(currentWave));
+        //StartWave(currentWave);
     }
 
     private void Start()
@@ -77,7 +75,7 @@ public class Spawnpoint : MonoBehaviour
         EnemyDefeated();
         if (houseHealth != null)
         {
-            //houseHealth.TakeDamage();
+            //houseHealth.TakeDamage(10);
         }
     }
 
@@ -94,6 +92,7 @@ public class Spawnpoint : MonoBehaviour
             }
             else
             {
+
                 StartCoroutine(StartWave(currentWave));
                 towerSpawner.GetComponent<TowerSpawner>().AddMoney(250);
             }

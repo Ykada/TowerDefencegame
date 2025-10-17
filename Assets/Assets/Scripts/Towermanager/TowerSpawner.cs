@@ -26,6 +26,7 @@ public class TowerSpawner : MonoBehaviour
     [SerializeField] private int maxTowers = 25;
     [SerializeField] private int startingMoney = 500;
     [SerializeField] private int money;
+    private float displayedMoney;
 
     [Header("UI")]
     [SerializeField] private Text moneyText;
@@ -42,6 +43,7 @@ public class TowerSpawner : MonoBehaviour
     private void Start()
     {
         money = startingMoney;
+        displayedMoney = money;
         UpdateMoneyUI();
     }
 
@@ -50,6 +52,8 @@ public class TowerSpawner : MonoBehaviour
         HandleTowerSelection();
         HandleTowerPlacement();
         HandleTowerInteraction();
+        displayedMoney = Mathf.Lerp(displayedMoney, money, Time.deltaTime * 10f);
+        moneyText.text = "$: " + Mathf.RoundToInt(displayedMoney);
     }
 
     #region Tower Selection
@@ -192,6 +196,7 @@ public class TowerSpawner : MonoBehaviour
 
     private void UpdateMoneyUI()
     {
+
         moneyText.text = $"$ {money}";
         currenttowersspawnedtext.text = $"Towers: {placedTowers.Count}/{maxTowers}";
     }

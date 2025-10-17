@@ -8,10 +8,6 @@ public class HouseHealth : MonoBehaviour
     [SerializeField] private Slider healthBar;
     [SerializeField] private Text healthText;
     [SerializeField] private Spawnpoint spawnpoint1;
-
-    void Start()
-    {
-    }
     void Update()
     {
         healthBar.value = currenthealth;
