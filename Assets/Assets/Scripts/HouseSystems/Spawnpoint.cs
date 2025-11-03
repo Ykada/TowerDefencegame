@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using System.Collections;
 
+// Spawnpoint.cs
+// Manages enemy wave spawning, tracks wave progression, and handles enemy deaths in a tower defense game.
+// Ykada_Hiroka
 public class Spawnpoint : MonoBehaviour
 {
     [Header("Enemy Prefabs")]
@@ -148,3 +151,5 @@ public class Spawnpoint : MonoBehaviour
         }
     }
 }
+
+// © 2025 YKΛDΛ_. All rights reserved.

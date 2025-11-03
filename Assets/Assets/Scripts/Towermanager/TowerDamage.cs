@@ -1,5 +1,8 @@
-using UnityEngine;
+﻿using UnityEngine;
 
+// TowerDamage.cs
+// Manages the tower's ability to detect enemies within range and shoot bullets at them.
+// Ykada_Hiroka
 public class TowerDamage : MonoBehaviour
 {
     [SerializeField] private int damageAmount = 10;
@@ -53,3 +56,5 @@ public class TowerDamage : MonoBehaviour
         }
     }
 }
+
+// © 2025 YKΛDΛ_. All rights reserved.

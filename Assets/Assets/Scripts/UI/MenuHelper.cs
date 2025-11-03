@@ -1,7 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// MenuHelper.cs
+// Manages the in-game menu, including toggling visibility and returning to the main menu.
+// Ykada_Hiroka 
 public class MenuHelper : MonoBehaviour
 {
     [SerializeField] private GameObject menuUI;
@@ -48,3 +51,4 @@ public class MenuHelper : MonoBehaviour
     }
 }
 
+// © 2025 YKΛDΛ_. All rights reserved.

@@ -1,8 +1,11 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
+// TowerSpawner.cs
+// Manages tower selection, placement, rotation, removal, and UI updates in a tower defense game.
+// Ykada_Hiroka
 public class TowerSpawner : MonoBehaviour
 {
     [Header("Preview Prefabs (Ghost Towers)")]
@@ -35,7 +38,7 @@ public class TowerSpawner : MonoBehaviour
     [SerializeField] private Text currenttowersspawnedtext;
 
     private GameObject previewTower;
-    private GameObject selectedTowerPrefab; // real tower to spawn
+    private GameObject selectedTowerPrefab;
     private int previewCost;
 
     private readonly List<PlacedTower> placedTowers = new List<PlacedTower>();
@@ -229,3 +232,5 @@ public class TowerSpawner : MonoBehaviour
     }
     #endregion
 }
+
+// © 2025 YKΛDΛ_. All rights reserved.

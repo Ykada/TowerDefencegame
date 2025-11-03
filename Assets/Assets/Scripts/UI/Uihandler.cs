@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// Uihandler.cs
+// Manages the UI loading screen and shader warm-up process before loading the main game scene.
+// Ykada_Hiroka
 public class Uihandler : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScreen;
@@ -52,3 +55,5 @@ public class Uihandler : MonoBehaviour
         SceneManager.LoadScene(sceneToLoad);
     }
 }
+
+// © 2025 YKΛDΛ_. All rights reserved.

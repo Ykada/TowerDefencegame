@@ -1,13 +1,17 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// HouseHealth.cs
+// Manages the health of the house, updates UI elements, and handles game over state.
+// Ykada_Hiroka
 public class HouseHealth : MonoBehaviour
 {
     [SerializeField] private int currenthealth = 100;
     [SerializeField] private Slider healthBar;
     [SerializeField] private Text healthText;
     [SerializeField] private Spawnpoint spawnpoint1;
+    [SerializeField] private GameObject gameovermenu;
     void Update()
     {
         healthBar.value = currenthealth;
@@ -21,9 +25,11 @@ public class HouseHealth : MonoBehaviour
         {
             Debug.Log("Game Over");
             Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene("StartingScene");
+            gameovermenu.SetActive(true);
         }
         spawnpoint1.gameObject.GetComponent<Spawnpoint>().EnemyDeathByHouse();
     }
 
 }
+
+// © 2025 YKΛDΛ_. All rights reserved.

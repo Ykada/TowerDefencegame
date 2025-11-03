@@ -1,4 +1,8 @@
-using UnityEngine;
+﻿using UnityEngine;
+
+// Bullet.cs
+// Manages the behavior of bullets fired by towers, including seeking targets and applying damage.
+// Ykada_Hiroka
 
 public class Bullet : MonoBehaviour
 {
@@ -45,3 +49,5 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
+// © 2025 YKΛDΛ_. All rights reserved.

@@ -1,5 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
 
+//freecammovement.cs
+//A camera movement script for Unity.
+// Allows the camera to move freely in 3D space using mouse and keyboard input.
+// Ykada_Hiroka
 public class CameraFreeCamMovement : MonoBehaviour
 {
     public float cameraSensitivity = 3;
@@ -52,3 +56,5 @@ public class CameraFreeCamMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.E)) { transform.position -= transform.up * climbSpeed * Time.deltaTime; }
     }
 }
+
+// © 2025 YKΛDΛ_. All rights reserved.
