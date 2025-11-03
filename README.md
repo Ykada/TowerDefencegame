@@ -1,60 +1,70 @@
-<img width="1777" height="551" alt="YES3" src="https://github.com/user-attachments/assets/457bf029-a74c-4981-9f84-eada3cea0a86" />
+# 🏰 TOWER DEFENCE SIMULATOR
 
-###
-###
+<div align="center">
 
-<h1 align="center">ŦØШΞЯ ÐΞƑΞИϾΞ ŞĪΜЦŁΛŦØЯ</h1>
+![Tower Defence Game](https://github.com/user-attachments/assets/457bf029-a74c-4981-9f84-eada3cea0a86)
 
-<p align="center">Main Develper behind this project YKΛDΛ_ </p>
+### Made with ❤️ by **YKADA_**
 
-###
-###
+*A thrilling tower defence simulator experience*
 
-<p align="center">Made with Love, Presenting to you,</p>
-<p align="center">TOWER DEFENCE SIMULATOR</p>
+[![GitHub](https://img.shields.io/badge/GitHub-Ykada%2FTowerDefencegame-blue?logo=github)](https://github.com/Ykada/TowerDefencegame)
+[![Trello](https://img.shields.io/badge/Trello-Project%20Board-lightblue?logo=trello)](https://trello.com/b/LuTzScsx/towerdefencegame)
 
-<img width="1771" height="718" alt="YES" src="https://github.com/user-attachments/assets/7ddbdc77-5d93-4fdc-973a-9d35004dbf82" />
+</div>
 
-###
+---
 
+## 🎮 Overview
 
-<img width="1771" height="718" alt="YES2" src="https://github.com/user-attachments/assets/1c3d3e3e-4898-4bab-9ffc-2080866eaa64" />
+Tower Defence Simulator is an engaging strategy game where you defend your base by strategically placing towers to eliminate waves of enemies. Test your tactical skills and survive increasingly challenging rounds!
 
-![Movie_001 (1)](https://github.com/user-attachments/assets/5c6ac299-3d41-4b46-aeed-3224b25e988e)
+---
 
-###
-###
-###
+## 🎯 GamePlay Systems
 
-  <h1 align="center">GamePlay Systems</h1>
-  <p align="center">Minor Quality Changes Recording Quality YKΛDΛ_ </p>
+### 🛡️ Health & Wave System
+![Health Display](https://github.com/user-attachments/assets/4783a2b1-ed23-4a01-8aa5-88f4fdba4518)
 
-![Movie_013](https://github.com/user-attachments/assets/4783a2b1-ed23-4a01-8aa5-88f4fdba4518)
-  <p align="center">At the spawning place you can see how mutch health you have left or what wave you are currently in</p>
-  
-![Movie_007](https://github.com/user-attachments/assets/d2c31f21-734b-4e33-a562-130d553460f9)
-  <p align="center">The Spawning place of the enemys spawn at</p>
-  
-  ![Movie_009](https://github.com/user-attachments/assets/3be631c5-7eb5-4d63-bb29-c9e5a4c16410)
-  <p align="center">The Towers deal damage to the leading enemy</p>
-  
-  ![Movie_011](https://github.com/user-attachments/assets/d0f1286c-b9df-4826-a8d1-b4176e38827b)
-  <p align="center">All Enemys travel to a central point where they deal damage to your health</p>
+Monitor your remaining health and track which wave you're currently facing at the spawning point.
 
+### 🌊 Enemy Spawning
+![Enemy Spawn](https://github.com/user-attachments/assets/d2c31f21-734b-4e33-a562-130d553460f9)
 
-###
-###
-###
-  
-  <p align="center">Map and other Visual aspects of the Simulator are from the unity asset store or generated with AI</p>
-  <p align="center">https://trello.com/b/LuTzScsx/towerdefencegame</p>
-  <p align="center">https://github.com/Ykada/TowerDefencegame/blob/main/README.txt</p>
-  
+Enemies spawn from designated locations and travel across the map towards your base.
 
-  ###
-  ###
-  ###
+### 🎯 Tower Combat
+![Tower Damage](https://github.com/user-attachments/assets/3be631c5-7eb5-4d63-bb29-c9e5a4c16410)
 
+Towers automatically target and deal damage to the leading enemy in their range.
 
-  <h9 align="center">© 2025 YKΛDΛ_. All rights reserved.
-All scripts included in this repository are the intellectual property of YKΛDΛ_ and may not be copied, modified, distributed, or used for commercial purposes without explicit permission.</h9>
+### 💔 Damage Mechanics
+![Central Point](https://github.com/user-attachments/assets/d0f1286c-b9df-4826-a8d1-b4176e38827b)
+
+All enemies travel to a central point where they inflict damage on your health bar.
+
+---
+
+## 🎨 Visual Assets
+
+✨ Map and visual elements sourced from:
+- **Unity Asset Store** - Professional game assets
+- **AI-Generated Content** - Custom visual elements
+
+---
+
+## 📚 Resources
+
+- **Project Board**: [Trello Board](https://trello.com/b/LuTzScsx/towerdefencegame)
+- **Documentation**: [README.txt](https://github.com/Ykada/TowerDefencegame/blob/main/README.txt)
+- **Repository**: [GitHub](https://github.com/Ykada/TowerDefencegame)
+
+---
+
+<div align="center">
+
+### © 2025 YKADA_. All rights reserved.
+
+All scripts included in this repository are the intellectual property of YKADA_ and may not be copied, modified, distributed, or used for commercial purposes without explicit permission.
+
+</div>
