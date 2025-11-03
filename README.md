@@ -2,7 +2,7 @@
 
 <div align="center">
 
-### Made with by **[YKADA_](https://github.com/Ykada)**
+### Made by **[YKADA_](https://github.com/Ykada)**
 
 *A thrilling tower defence strategy game experience*
 
